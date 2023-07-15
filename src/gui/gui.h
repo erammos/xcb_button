@@ -8,11 +8,12 @@
 #define GUI_H
 
 #ifdef gui_IMPORT
-	#define EXTERN
+#define EXTERN
 #else
-	#define EXTERN extern
+#define EXTERN extern
 #endif
 
+#include <stdbool.h>
 #include <stdint.h>
 /* Constants declaration */
 
@@ -30,9 +31,13 @@ typedef struct gui_event {
  * @return New gui_Type.
  */
 EXTERN void gui_dispose_window(void *);
-EXTERN gui_window * gui_create_window(int x, int y, int width,int height);
+EXTERN gui_window *gui_create_window(uint32_t x, uint32_t y, uint32_t width,
+                                     uint32_t height);
 EXTERN gui_event gui_poll_events(void *);
 EXTERN void gui_update_window(void *);
-EXTERN void gui_draw_rect(void * p);
+EXTERN void gui_draw_rect(void *p, uint32_t x, uint32_t y, uint32_t width,
+                          uint32_t height, uint32_t color);
+EXTERN bool gui_button(void *p, uint32_t x, uint32_t y, uint32_t width,
+                       uint32_t height, const char *text);
 #undef EXTERN
 #endif
