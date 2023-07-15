@@ -4,9 +4,7 @@
 #include <unistd.h>
 int main(void) {
   gui_window *wnd = gui_create_window(0, 0, 50, 50);
-  uint32_t x = 0;
-  while (1) {
-    gui_event e = gui_poll_events(wnd);
+  while (!gui_quit(wnd)) {
     if (gui_button(wnd, 100, 100, 100, 100, "Click 1")) {
       printf("Click 1\n");
     }
