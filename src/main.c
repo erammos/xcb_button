@@ -1,3 +1,11 @@
+/** @file main.c
+ *  @brief An XCB Demo.
+ *
+ *  Renders Two buttons and two texts in imgui style
+ *
+ *  @author Elias Rammos <rammoselias@gmail.com>
+ */
+
 #include "gui/gui.h"
 #include <stdio.h>
 #include <stdlib.h>
